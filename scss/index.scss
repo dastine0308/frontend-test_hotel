@@ -94,7 +94,7 @@
             position: absolute;
             bottom: -5%;
             right: calc((100% - 30px) / 2);            
-            content: url("/img/button_dropDown.svg");
+            content: url("../img/button_dropDown.svg");
             @include md-width(){
                 bottom: -10%;
             }
@@ -137,7 +137,7 @@
         .date {
             position: relative;
             &::after {
-                content: url("/img/button_onlyDropDown.svg");
+                content: url("../img/button_onlyDropDown.svg");
                 position: absolute;
                 bottom: -10%;
                 right: -30%;
@@ -156,13 +156,13 @@
                     position: absolute;
                     left: -80%;
                     top: -40%;
-                    content: url("/img/button_minus.svg");
+                    content: url("../img/button_minus.svg");
                 }
                 &::after {
                     position: absolute;
                     right: -80%;
                     top: -40%;
-                    content: url("/img/button_plus.svg");
+                    content: url("../img/button_plus.svg");
                 }
             }
         }
@@ -237,7 +237,7 @@
             @include md-width(){
                 height: 420px;
             }
-            background-image: url("~image_item.svg");
+            background-image: url("../image_item.svg");
             background-repeat:no-repeat;
             background-position: center top;
             background-size: cover;
