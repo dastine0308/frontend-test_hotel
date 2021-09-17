@@ -1,0 +1,79 @@
+@import "utilis/_variable.scss"; 
+@import "utilis/_mixin.scss"; //RWD斷點
+
+* {
+	font-family: $body-font;
+	font-size: 18px;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	color: $white;;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow-x: hidden;
+	width: 100vw;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-inline {
+    display: inline-block;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-none {
+    display: none;
+}
+
+// 主標題
+.title1 {
+	width: 40%;
+	font-size: 56px;
+	font-weight: 300;
+	line-height: 64px;
+	@include xl-width(){
+		font-size: 72px;
+		line-height: 80px;
+	}
+}
+
+.title2 {
+	font-size: $font-size-lg;
+	line-height: 64px;
+	font-weight: 300;
+}
+
+.title3 {
+	font-size: 20px;
+	line-height: 32px;
+	font-weight: 300;
+}
+
+.title3 {
+	font-size: $font-size-base;
+	line-height: 32px;
+}
+
+.title4 {
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: 300;
+}
+
+.text1 {
+	font-size: $font-size-sm;
+	font-weight: 100;
+}

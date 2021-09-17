@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>frontend test-hotel</title>
+
+    <link
+      rel="stylesheet"
+      href="vendor/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/index.min.css" />
+    
+    <!-- font-awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+
+  </head>
+
+  <body class="body">
+    <div id="app" class="app">
+      <header class="header">
+        <div class="navbar d-flex flex-row align-items-center justify-content-between justify-content-xl-around px-3 px-md-4 px-xl-0">
+          <!-- Logo -->
+          <div class="logo">HOTEL</div>
+          <!-- 手機版才出現 -->
+          <div class="d-flex flex-row align-items-center d-xl-none">
+            <!-- 按鈕：SIGN UP -->
+            <div class="signUp-btn">SIGN UP</div>
+            <!-- 按鈕：漢堡選單 -->
+            <button class="navbar__mobile-btn navbar-toggler pl-3" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <img src="/img/button_menu.svg"/>
+            </button>
+          </div>
+          <!-- 選單 -->
+          <nav class="navbar__list collapse navbar-collapse d-xl-flex" id="navbarNavDropdown">
+            <ul class="navbar-nav d-flex flex-column flex-xl-row align-items-xl-center">
+                <li class="nav-item" v-for="item in navMenu">{{item}}</li>
+            </ul>
+          </nav>
+           <!-- 按鈕：SIGN UP -->
+           <button class="btn signUp-btn d-none d-xl-flex">SIGN UP</button>
+        </div>
+      </header>
+      <section class="home-wrap">
+        <div class="container home-wrap__container">
+          <p class="title1">Exclusive Boutique Hotel</p>
+          <p class="title3 mt-3">Luxury Boutique Hotel</p>
+          <ul class="contact-box mt-5">
+            <li class="fb"><img src="/img/Image_FB.svg"/></li>
+            <li class="twitter"><img src="/img/image_twitter.svg"/></li>
+            <li class="ig"><img src="/img/Image_ig.svg"/></li>
+          </ul>
+          <ul class="dashboard d-flex flex-column flex-md-row justify-content-center">
+            <!-- 入住時間 -->
+            <li class="p-4">
+              <p>ARRIVAL</p>
+              <div class="d-flex mt-3">
+                <div class="title2">18</div>
+                <div class="ml-4">
+                  <div class="title3 date">Oct, 2019</div>
+                  <p class="mt-2 text1">Friday</p>
+                </div>
+              </div>
+            </li>
+            <!-- 退房時間 -->
+            <li class="p-4">
+              <p>DEPARTURE</p>
+              <div class="d-flex mt-3">
+                <div class="title2">19</div>
+                <div class="ml-4">
+                  <div class="title3 date">Oct, 2019</div>
+                  <p class="mt-2 text1">Friday</p>
+                </div>
+              </div>
+            </li>
+            <!-- 人數 -->
+            <li class="people d-flex">
+              <!-- 大人 -->
+              <div class="people__count d-flex flex-column align-items-center py-4">
+                <p>ADULTS</p>
+                <div class="title2 mt-3 number">2</div>
+              </div>
+              <!-- 小孩 -->
+              <div class="people__count d-flex flex-column align-items-center py-4">
+                <p>CHILDREN</p>
+                <div class="title2 mt-3 number">0</div>
+              </div>
+            </li>
+            <li class="d-flex">
+              <button class="btn check-btn m-auto">CHECK AVAILABILITY</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="about-wrap">
+        <div class="container about-wrap__container d-xl-flex align-items-xl-center">
+          <div class="content">
+            <p class="title2">Luxury Plaza Hotel for You</p>
+            <p class="title3 mt-3">Distant orb has power to raise and purify our thoughts like a strain of sacred music.</p>
+            <button class="btn about-btn mt-5">ABOUT US</button>
+          </div>
+          <div class="video-box mt-5 mt-xl-0">
+            <div class="frame"></div>
+            <div class="txt d-flex align-items-center">
+              <div><img src="/img/button_player.svg"/></div>
+              <div class="ml-4">
+                <p class="title4">Play video</p>
+                <p class="time">2:34</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container footer__container d-flex flex-column flex-xl-row justify-content-around justify-content-xl-between align-items-xl-center">
+          <div>
+            <!-- Logo -->
+            <div class="logo title2">HOTEL</div>
+            <ul class="contact-txt d-flex flex-column flex-xl-row mt-4">
+              <li class="d-flex" v-for="info in contactInfo">
+                <img :src="info.img"/>
+                <p class="ml-3">{{info.text}}</p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="title4">Subscribe</p>
+            <input class="email-input mt-3" type="text" placeholder="Email">
+            <p class="text1 mt-3">No spam. Only profit.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+
+    <!-- vue.js -->
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          navMenu:[
+            "About", "Service", "Rooms", "Blog", "Contact",
+          ],
+          contactInfo:[
+            {
+              img: "/img/Image_phone.svg",
+              text: "(4321) 0987-654-320"
+            },
+            {
+              img: "/img/Image_mail.svg",
+              text: "support@hotel.com"
+            },
+            {
+              img: "/img/Image_location.svg",
+              text: "33 Jaja Park Rd, Yellow, USA"
+            },
+          ],
+        },
+        methods: {},
+        watch: {}
+    })
+    </script>
+
+
+
+   
+    <!-- vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js "></script>
+    <script src="vendor/bootstrap/4.2.1/js/bootstrap.bundle.min.js "></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.js"
+      type="text/javascript"
+    ></script>
+  </body>
+</html>

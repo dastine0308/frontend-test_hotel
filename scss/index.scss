@@ -1,0 +1,294 @@
+@import "utilis/_variable.scss"; 
+@import "utilis/_mixin.scss"; //RWD斷點
+
+.app {
+	width: 100%;
+}
+
+.header{
+    .navbar {
+        width: 100%;
+        padding: 20px 0;
+        position: fixed;
+        font-weight: 300;
+        z-index: 100;
+    }
+    .logo {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .signUp-btn{
+        border-radius: $border-radius;
+        border: .5px white solid;
+        padding: .8rem 2rem;
+        font-size: $font-size-sm;
+        color: $white;
+    }
+    // 漢堡選單（手機版）
+    .navbar__mobile-btn {
+        background-color: transparent;
+        border: none;
+        &:focus {
+            outline-style: none;
+        }
+    }
+    .navbar-nav {
+        height: 100%;
+        padding: 20px;
+        li {
+            font-size: $font-size-base;
+        }
+        li+li {
+            border-top: 1px $second-color solid;
+            margin-top: 20px;
+            padding-top: 20px;
+            @include xl-width(){
+                border: none;
+                padding-top: 0;;
+                margin-top: 0;
+                margin-left: 50px;
+            }
+        }
+    }
+}
+
+.home-wrap {
+    background-image: url(/img/image_background.svg);
+    background-repeat:no-repeat;
+    background-position: center top;
+    width: auto;
+    height: 880px;
+    @include xl-width(){
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+    }
+    &__container {
+        padding-top: 25%;
+        @include xl-width(){
+            padding-top: 15%;
+        }
+    }
+
+    .contact-box {
+        display: flex;
+        li+li {
+            margin-left: 8px;
+        }
+    }
+    .dashboard {
+        position: relative;
+        max-height: 576px;
+        margin-top: 64px;
+        background-color: $main-color;
+        box-shadow: 10px 10px 20px $third-dark;
+        border-radius: 15px;
+        @include md-width(){
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        @include xl-width(){
+            min-height: 144px;
+        }
+        &::after {
+            position: absolute;
+            bottom: -5%;
+            right: calc((100% - 30px) / 2);            
+            content: url("/img/button_dropDown.svg");
+            @include md-width(){
+                bottom: -10%;
+            }
+            @include xl-width(){
+                bottom: -15%;
+            }
+        }
+        li {
+            height: calc( 576px / 4);
+        }
+        li+li {
+            border-top: 1px $main-dark solid;
+        }
+        @include md-width(){
+            li {
+                width: calc( 100% / 3);
+            }
+            li:first-of-type{
+                border-left: none;
+            }
+            li:not(:nth-last-of-type(1)) {
+                border-top: none;
+                border-bottom: 1px $main-dark solid;
+                border-left: 1px $main-dark solid;
+            }
+        }
+        @include xl-width(){ 
+            li {
+                width: calc( 100% / 4);
+                border-top: none;
+            }
+            li:first-of-type {
+                border: none;
+            }
+            li+li {
+                border-top: none;
+                border-left: 1px $main-dark solid;
+            }
+        }
+        .date {
+            position: relative;
+            &::after {
+                content: url("/img/button_onlyDropDown.svg");
+                position: absolute;
+                bottom: -10%;
+                right: -30%;
+            }
+        }
+        .people {
+            &__count {
+                width: 50%;
+            }
+            div+div{
+                border-left: 1px $main-dark solid;
+            }
+            .number {
+                position: relative;
+                &::before {
+                    position: absolute;
+                    left: -80%;
+                    top: -40%;
+                    content: url("/img/button_minus.svg");
+                }
+                &::after {
+                    position: absolute;
+                    right: -80%;
+                    top: -40%;
+                    content: url("/img/button_plus.svg");
+                }
+            }
+        }
+        .check-btn {
+            color: $black;
+            background-color: $third-color;
+            padding: 13px 23px;
+        }
+    }
+}
+
+.about-wrap {
+    background-color: $second-color;
+    @include xl-width(){
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+    }
+    &__container { 
+        width: auto;
+        padding-top: 60%;
+        padding-bottom: 60%;
+        @include sm-width(){
+            padding-top: 40%;
+            padding-bottom: 40%;
+        }
+        @include md-width(){
+            padding-top: 20%;
+            padding-bottom: 20%;
+        }
+        @include lg-width(){
+            padding-top: 15%;
+            padding-bottom: 15%;
+        }
+        @include xl-width(){
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
+    }
+    .title2 {
+        color: $black;
+        width: 80%;
+    }
+    .title3 {
+        color: $second-dark;
+        width: 70%;
+    }
+    .about-btn {
+        color: $black;
+        background-color: transparent;
+        border: 1px solid $second-dark;
+        padding: 12px 44px;
+    }
+
+    .content {
+        width: 100%;
+        @include xl-width(){
+            width: 50%;
+        }
+    }
+    .video-box {
+        flex: 1;
+        box-shadow: 10px 10px 20px $third-dark;
+        border-radius: $border-radius;
+        .frame {
+            border-radius: $border-radius $border-radius 0 0;
+            height: 220px;
+            overflow: hidden;
+            @include md-width(){
+                height: 320px;
+            }
+            @include md-width(){
+                height: 420px;
+            }
+            background-image: url("/img/image_item.svg");
+            background-repeat:no-repeat;
+            background-position: center top;
+            background-size: cover;
+        }
+        .txt {
+            background-color: $white;
+            border-radius: 0 0 $border-radius $border-radius;
+            padding: 30px;
+            p {
+                color: $black;
+            }
+            .time {
+                color: $second-dark;
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: $main-color;
+    &__container {
+        height: 500px;
+        @include xl-width {
+            height: 305px;
+        }
+    }
+    .email-input {
+        width: 100%;
+        line-height: 24px;
+        padding: 10px;
+        color: $black;
+        @include xl-width {
+            width: 274px;
+        }
+    }
+    .text1 {
+        color: #FFFFFF7E;
+    }
+    .contact-txt {
+        li+li {
+            margin-top: 15px;
+            @include xl-width {
+                margin-top: 0;
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+
+
+
+
+

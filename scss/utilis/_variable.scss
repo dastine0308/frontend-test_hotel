@@ -1,0 +1,36 @@
+@import "_mixin.scss"; 
+
+//font family
+$en-font: "Helvetica","Microsoft JhengHei", sans-serif;
+
+//font--------------------
+$body-font: $en-font;
+
+$font-size-base: 18px !default; // 18px
+$font-size-lg: 56px !default; // 56px
+$font-size-sm: 14px !default; // 14px
+
+@include lg-width(){
+    $font-size-base: 18px; // 18px
+    $font-size-lg: 20px; // 72px
+    $font-size-sm: 16px; // 16px
+}
+
+
+//color---------------------
+$main-color: #2C4664;
+$second-color: #EDF1F5;
+$third-color: #C8FF8C; // button
+$fourth-color: #FFFFFF7E; // dashboard-txt
+
+$white:#FFFFFF;
+$black:#333333; 
+
+$main-dark: #21364E; 
+$second-dark: #33333380; // content、placeholder
+$third-dark: #00000019;// box shadow
+
+
+//param
+$border-radius: 24px;
+$width: 100%;
